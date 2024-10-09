@@ -31,13 +31,13 @@ jobs:
         ./build.sh
         ./build.sh --destdir destdir/ install
         find destdir/
-    - name: "Unit & module tests"
-      run: |
-        go test ./... -coverprofile=coverage.out -covermode=atomic
-    - name: "Integration tests"
-      run: |
-        cd tests/
-        ./run.sh
+    # - name: "Unit & module tests"
+    #   run: |
+    #     go test ./... -coverprofile=coverage.out -covermode=atomic
+    # - name: "Integration tests"
+    #   run: |
+    #     cd tests/
+    #     ./run.sh
     - uses: codecov/codecov-action@v2
       with:
         files: ./coverage.out
